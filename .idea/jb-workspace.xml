@@ -5,6 +5,7 @@
     <project name="api-gateway" path="$PROJECT_DIR$/api-gateway" />
     <project name="policy" path="$PROJECT_DIR$/policy" />
     <project name="http" path="$PROJECT_DIR$/http" />
+    <project name="images" path="$PROJECT_DIR$/images" />
     <option name="workspace" value="true" />
   </component>
 </project>
