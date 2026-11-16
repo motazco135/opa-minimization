@@ -168,7 +168,7 @@ Every call to these APIs already passes through the API gateway and the gateway 
 The design splits the job in two: OPA makes the decision, and a plugin in the gateway enforces it. In access-control terms, OPA is the Policy Decision Point (PDP) and the gateway plugin is the Policy Enforcement Point (PEP).
 
 <figure>
-<img src="images/arch.jpeg" alt="Architecture Diagram" />
+<img src="images/arch.png" alt="Architecture Diagram" />
 <figcaption>API minimization High level Architecture</figcaption>
 </figure>
 
@@ -352,8 +352,7 @@ To integrate with OPA I used [OPA REST Service](https://www.openpolicyagent.org/
               "transactions.amount",
               "transactions.currency",
               "transactions.description",
-              "transactions.category",
-              "transactions.counterparty"
+              "transactions.category"
             ]
           }
         }
