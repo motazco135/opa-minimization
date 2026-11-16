@@ -1,0 +1,58 @@
+{
+  "consumers": {
+    "mobile-banking": {
+      "description": "Retail mobile app",
+      "owner": "Digital Channels",
+      "purpose": "Customer self-service: balances, payments, spending insights (PFM)",
+      "apis": {
+        "GET /accounts/{id}": [
+          "id", "nickname", "currency", "iban",
+          "balance",
+          "owner.name"
+        ],
+        "GET /accounts/{id}/transactions": [
+          "accountId",
+          "transactions.id", "transactions.date", "transactions.amount",
+          "transactions.currency", "transactions.description",
+          "transactions.category"
+        ]
+      }
+    },
+    "web-banking": {
+      "description": "Retail internet banking",
+      "owner": "Digital Channels",
+      "purpose": "Customer self-service, plus downloadable and printed statements",
+      "apis": {
+        "GET /accounts/{id}": [
+          "id", "nickname", "currency", "iban",
+          "balance",
+          "owner.name", "owner.address"
+        ],
+        "GET /accounts/{id}/transactions": [
+          "accountId",
+          "transactions.id", "transactions.date", "transactions.amount",
+          "transactions.currency", "transactions.description",
+          "transactions.category"
+        ]
+      }
+    },
+    "crm": {
+      "description": "Contact center CRM",
+      "owner": "Customer Service",
+      "purpose": "Verify the caller, handle disputes, call the customer back",
+      "apis": {
+        "GET /accounts/{id}": [
+          "id", "nickname", "currency", "iban",
+          "balance",
+          "owner.name", "owner.address", "owner.phone", "owner.email",
+          "owner.dateOfBirth"
+        ],
+        "GET /accounts/{id}/transactions": [
+          "accountId",
+          "transactions.id", "transactions.date", "transactions.amount",
+          "transactions.currency", "transactions.description"
+        ]
+      }
+    }
+  }
+}

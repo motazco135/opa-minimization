@@ -1,0 +1,17 @@
+{
+  "consumer_id": "mobile-banking",
+  "method": "GET",
+  "path": "/accounts/acc-1/transactions",
+  "resource": {
+    "accountId": "acc-1",
+    "transactions": [
+      {"id": "t-1", "date": "2026-11-01", "amount": -45.5, "currency": "SAR",
+       "description": "Card payment - Half Million Cafe", "category": "restaurants",
+       "counterparty": {"name": "Half Million Cafe", "iban": "SA4420000001234567891234"},
+       "location": {"lat": 24.71, "lon": 46.67}},
+      {"id": "t-2", "date": "2026-11-01", "amount": -230.0, "currency": "SAR",
+       "description": "Card payment - Danube Supermarket", "category": "groceries",
+       "location": {"lat": 24.73, "lon": 46.65}}
+    ]
+  }
+}

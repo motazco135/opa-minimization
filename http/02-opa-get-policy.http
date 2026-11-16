@@ -1,0 +1,5 @@
+
+# curl --location 'http://localhost:8181/v1/policies/minimize'
+GET http://localhost:8181/v1/policies/policy/minimize.rego
+
+###

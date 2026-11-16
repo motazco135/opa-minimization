@@ -1,0 +1,4 @@
+### GET OAP Consuer DATA
+
+GET http://localhost:8181/v1/data/consumers
+###

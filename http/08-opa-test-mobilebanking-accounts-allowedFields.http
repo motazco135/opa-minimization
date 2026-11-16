@@ -1,0 +1,14 @@
+###
+
+POST http://localhost:8181/v1/data/accounts/minimize/allowed_fields
+Content-Type: application/json
+
+{
+  "input": {
+    "consumer_id": "mobile-banking",
+    "method": "GET",
+    "path": "/accounts/acc-1"
+  }
+}
+
+###

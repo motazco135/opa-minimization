@@ -1,0 +1,27 @@
+### GET request to example server
+POST http://localhost:8181/v1/data/accounts/minimize/filtered
+Content-Type: application/json
+
+{
+  "input": {
+    "consumer_id": "mobile-banking",
+    "method": "GET",
+    "path": "/accounts/acc-1",
+    "resource": {
+        "id": "acc-1",
+        "nickname": "Current account",
+        "currency": "SAR",
+        "iban": "SA0380000000608010167519",
+        "balance": {"current": 1500.25, "available": 1200, "currency": "SAR"},
+        "owner": {
+          "name": "Motaz-1",
+          "nationalId": "1000000000",
+          "dateOfBirth": "1990-04-15",
+          "phone": "+966500000000",
+          "email": "test@example.com",
+          "address": {"city": "Riyadh", "street": "test"}
+        }
+    }
+  }
+}
+###

@@ -1,0 +1,43 @@
+###
+
+POST http://localhost:8181/v1/data/accounts/minimize/filtered
+Content-Type: application/json
+
+{
+  "input": {
+    "consumer_id": "mobile-banking",
+    "method": "GET",
+    "path": "/accounts/acc-1/transactions",
+    "resource": {
+      "accountId": "acc-1",
+      "transactions": [
+        {
+          "amount": -45.5,
+          "category": "restaurants",
+          "currency": "SAR",
+          "date": "2026-11-01",
+          "description": "Card payment - Cafe",
+          "id": "t-1",
+          "location": {
+            "lat": 24.73,
+            "lon": 46.65
+          }
+        },
+        {
+          "amount": -230,
+          "category": "groceries",
+          "currency": "SAR",
+          "date": "2026-11-01",
+          "description": "Card payment - Supermarket",
+          "id": "t-2",
+          "location": {
+            "lat": 24.73,
+            "lon": 46.65
+          }
+        }
+      ]
+    }
+  }
+}
+
+###

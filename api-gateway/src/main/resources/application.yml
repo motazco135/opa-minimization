@@ -1,0 +1,43 @@
+server:
+  port: 8000
+
+opa:
+  url: ${OPA_URL:http://localhost:8181}
+
+spring:
+  application:
+    name: api-gateway
+  codec:
+    # Responses are buffered to filter them; allow up to 4 MB.
+    max-in-memory-size: 4MB
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5s
+      routes:
+        # No filtering: the cost of going through the gateway at all.
+        - id: passthrough
+          uri: ${BACKEND_URL:http://localhost:8080}
+          predicates:
+            - Path=/passthrough/**
+          filters:
+            - StripPrefix=1
+
+        # OPTION A: OPA decides, the gateway plugin trims the response.
+        - id: option-a-gateway-plugin
+          uri: ${BACKEND_URL:http://localhost:8080}
+          predicates:
+            - Path=/gateway/**
+          filters:
+            - StripPrefix=1
+            - OpaMinimize
+
+        # OPTION C: the gateway sends the whole response to OPA to trim.
+        - id: option-c-opa-filters
+          uri: ${BACKEND_URL:http://localhost:8080}
+          predicates:
+            - Path=/opa/**
+          filters:
+            - StripPrefix=1
+            - OpaFilterBody
